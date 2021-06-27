@@ -1,0 +1,12 @@
+<h2>{{ books.length }} {{ title }}</h2>
+<img [src]="imageUrl"/>
+<ul>
+    <li *ngFor="let book of books">
+        {{ book }}
+    </li>
+</ul>
+<table>
+    <tr>
+        <td [attr.colspan]="colSpan"></td>
+    </tr>
+</table>
