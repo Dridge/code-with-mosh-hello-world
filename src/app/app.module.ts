@@ -1,3 +1,4 @@
+import { SummaryPipe } from './summary.pipe';
 import { BooksService } from './books.service';
 import { BooksComponent } from './books/books.component';
 import { NgModule } from '@angular/core';
@@ -8,13 +9,16 @@ import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses.component';
 import { CourseComponent } from './course/course.component';
 import { CoursesService } from './courses.service';
+import { FavouriteComponent } from './favourite/favourite.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CoursesComponent,
     CourseComponent,
-    BooksComponent
+    BooksComponent,
+    SummaryPipe,
+    FavouriteComponent
   ],
   imports: [
     BrowserModule,
