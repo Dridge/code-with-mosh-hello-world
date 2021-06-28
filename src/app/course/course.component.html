@@ -1,1 +1,5 @@
-<p>course works!</p>
+<br/>{{ course.title | uppercase | lowercase }}<br/>
+{{ course.students | number }}<br/>
+{{ course.rating | number:'1.1-1'}}<br/>
+{{ course.price | currency:'AUD':false:'3.3-3' }}<br/>
+{{ course.releaseDate | date:'shortDate' }}
