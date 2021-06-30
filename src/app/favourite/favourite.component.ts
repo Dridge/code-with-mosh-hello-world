@@ -5,18 +5,19 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './favourite.component.html',
   styleUrls: ['./favourite.component.css']
 })
-export class FavouriteComponent implements OnInit {
-  icon
-  isFullIcon: boolean = false;
-  emptyStar =  "bi-star"
-  fullStar = "bi-star-fill"
+export class FavouriteComponent implements OnInit { 
+  // Commented out code is my original attempt
+  //icon
+  isFavourite: boolean = false;
+  // emptyStar =  "bi-star"
+  // fullStar = "bi-star-fill"
   constructor() { 
-    this.icon = this.emptyStar;
+    // this.icon = this.emptyStar;
   }
 
-  onClicked() {
-    this.icon = (this.isFullIcon) ? this.emptyStar : this.fullStar;
-    this.isFullIcon = !this.isFullIcon;
+  onClick() {
+    // this.icon = (this.isFavourite) ? this.emptyStar : this.fullStar;
+    this.isFavourite = !this.isFavourite;
     console.log("Favorutie icon was clicked");
   }
 

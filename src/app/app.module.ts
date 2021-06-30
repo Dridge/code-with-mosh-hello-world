@@ -10,6 +10,7 @@ import { CoursesComponent } from './courses.component';
 import { CourseComponent } from './course/course.component';
 import { CoursesService } from './courses.service';
 import { FavouriteComponent } from './favourite/favourite.component';
+import { TitlecaseInputComponent } from './titlecase-input/titlecase-input.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FavouriteComponent } from './favourite/favourite.component';
     CourseComponent,
     BooksComponent,
     SummaryPipe,
-    FavouriteComponent
+    FavouriteComponent,
+    TitlecaseInputComponent
   ],
   imports: [
     BrowserModule,
