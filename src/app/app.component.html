@@ -2,3 +2,7 @@
 <courses></courses>
 <course></course>
 <books></books>
+<titlecase-input></titlecase-input>
+<input type="text" [(ngModel)]="titleInput">
+<br>
+{{titleInput | titlecaseCustom }}

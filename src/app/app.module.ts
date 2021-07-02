@@ -11,6 +11,7 @@ import { CourseComponent } from './course/course.component';
 import { CoursesService } from './courses.service';
 import { FavouriteComponent } from './favourite/favourite.component';
 import { TitlecaseInputComponent } from './titlecase-input/titlecase-input.component';
+import { TitlecaseCustomPipe } from './titlecase-custom.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TitlecaseInputComponent } from './titlecase-input/titlecase-input.compo
     BooksComponent,
     SummaryPipe,
     FavouriteComponent,
-    TitlecaseInputComponent
+    TitlecaseInputComponent,
+    TitlecaseCustomPipe
   ],
   imports: [
     BrowserModule,

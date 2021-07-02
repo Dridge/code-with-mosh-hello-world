@@ -1,3 +1,8 @@
-<p>titlecase-input works!</p>
-<input>
-<span></span>
+<!--my first attempt
+    <input #titleInput type="text" (keyup) = "setTitleCaseText(titleInput.value)" >
+<p>{{ titleDisplayed | titlecaseCustom }}</p>-->
+<!-- improved after seeing the banana in the box two way bindings-->
+<input type="text" [(ngModel)]="titleDisplayed">
+<br>
+{{ titleDisplayed | titlecaseCustom }}
+<br>
