@@ -1,9 +1,6 @@
-<!--My attempt is here\/-->
-<!--<i (click)="onClick()" class="bi {{ icon }}"></i>-->
 <i 
     class="bi" 
-    [class.bi-star-fill]="isFavourite"
-    [class.bi-star]="!isFavourite"
+    [class.bi-star-fill]="isSelected"
+    [class.bi-star]="!isSelected"
     (click)="onClick()"
-    ></i>
-<!--<span class="glyphicon glyphicon-star"></span>-->
+></i>

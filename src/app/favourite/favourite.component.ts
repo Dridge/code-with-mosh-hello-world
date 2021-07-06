@@ -1,27 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'favourite',
   templateUrl: './favourite.component.html',
-  styleUrls: ['./favourite.component.css']
+    styles: [
+    `
+    @import "~bootstrap-icons/font/bootstrap-icons.css";
+    .bi {
+        color: green;
+    }
+    `
+  ],
+  encapsulation: ViewEncapsulation.Emulated
 })
-export class FavouriteComponent implements OnInit { 
-  // Commented out code is my original attempt
-  //icon
-  isFavourite: boolean = false;
-  // emptyStar =  "bi-star"
-  // fullStar = "bi-star-fill"
-  constructor() { 
-    // this.icon = this.emptyStar;
-  }
+export class FavouriteComponent { 
+  @Input('is-favourite')
+  isSelected: boolean = false;
+
+  @Output('change')
+  change = new EventEmitter();
 
   onClick() {
-    // this.icon = (this.isFavourite) ? this.emptyStar : this.fullStar;
-    this.isFavourite = !this.isFavourite;
-    console.log("Favorutie icon was clicked");
+    this.isSelected = !this.isSelected;
+    console.log("Favourite icon was clicked");
+    this.change.emit({ newValue: this.isSelected });
   }
+}
 
-  ngOnInit(): void {
-  }
-
+export interface FavouriteChangedEventArgs {
+  newValue: boolean;
 }

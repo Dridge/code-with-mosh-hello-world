@@ -1,8 +1,9 @@
+<h1>Hello World</h1>
 <h2>{{ books.length }} {{ title }}</h2>
 <img [src]="imageUrl"/>
 <ul>
     <li *ngFor="let book of books">
-        {{ book }} <favourite></favourite>
+        {{ book }} <favourite [is-favourite]="post.isFavourite" (change)="onFavouriteChanged($event)"></favourite>
     </li>
 </ul>
 <table>
