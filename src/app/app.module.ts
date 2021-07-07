@@ -12,6 +12,8 @@ import { CoursesService } from './courses.service';
 import { FavouriteComponent } from './favourite/favourite.component';
 import { TitlecaseInputComponent } from './titlecase-input/titlecase-input.component';
 import { TitlecaseCustomPipe } from './titlecase-custom.pipe';
+import { PanelComponent } from './panel/panel.component';
+import { LikeButtonComponent } from './like-button/like-button.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { TitlecaseCustomPipe } from './titlecase-custom.pipe';
     SummaryPipe,
     FavouriteComponent,
     TitlecaseInputComponent,
-    TitlecaseCustomPipe
+    TitlecaseCustomPipe,
+    PanelComponent,
+    LikeButtonComponent
   ],
   imports: [
     BrowserModule,
