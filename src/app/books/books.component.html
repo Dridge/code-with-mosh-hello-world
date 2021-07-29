@@ -1,4 +1,5 @@
-<h1>Hello World</h1>
+<h1>Hello World books</h1>
+<div [hidden]="books.length == 0">
 <h2>{{ books.length }} {{ title }}</h2>
 <img [src]="imageUrl"/>
 <ul>
@@ -7,8 +8,13 @@
         <like-button></like-button>
     </li>
 </ul>
+
 <table>
     <tr>
         <td [attr.colspan]="colSpan"></td>
     </tr>
 </table>
+</div>
+<div [hidden]="books.length > 0">
+    <h2>No books yet!</h2>
+</div>

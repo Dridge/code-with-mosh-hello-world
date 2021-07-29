@@ -1,15 +1,36 @@
 <h1>Angular</h1>
-<courses></courses>
-<course></course>
-<books></books>
-<titlecase-input></titlecase-input>
-<input type="text" [(ngModel)]="titleInput">
-<br>
-{{titleInput | titlecaseCustom }}
-<bootstrap-panel>
-    <ng-container class="heading">Heading</ng-container>
-    <div class="body">
-        <h2>Body</h2>
-        <p>Some content</p>
+<div class="btn-toolbar">
+    <ul class="nav nav-pills">
+        <li [class.active]="viewMode =='courses'"><a (click)="viewMode = 'courses'"><button class="btn btn-primary rounded-0">Courses</button></a></li>
+        <li [class.active]="viewMode =='books'"><a (click)="viewMode = 'books'"><button class="btn btn-primary rounded-0" >Books</button></a></li>
+        <li [class.active]="viewMode =='contactMe'"><a (click)="viewMode = 'contactMe'"><button class="btn btn-primary rounded-0" >Contact Me</button></a></li>
+        <li [class.active]="viewMode =='map'"><a (click)="viewMode = 'map'"><button class="btn btn-primary rounded-0" >Map</button></a></li>
+        <li [class.active]="viewMode =='list'"><a (click)="viewMode = 'list'"><button class="btn btn-primary rounded-0" >List</button></a></li>
+    </ul>
+</div>
+<div [ngSwitch]="viewMode">
+    <div *ngSwitchDefault>
+        <courses></courses>
+        <course></course>
     </div>
-</bootstrap-panel>
+    <div *ngSwitchCase="'books'"><books></books></div>
+    <div *ngSwitchCase="'contactMe'">
+        <titlecase-input></titlecase-input>
+        <input type="text" [(ngModel)]="titleInput">
+        <br>
+        {{titleInput | titlecaseCustom }}
+        <bootstrap-panel>
+            <ng-container class="heading">Heading</ng-container>
+            <div class="body">
+                <h2>Body</h2>
+                <p>Some content</p>
+            </div>
+        </bootstrap-panel>
+    </div>
+    <div *ngSwitchCase="'map'">
+        Map view content
+    </div>
+    <div *ngSwitchCase="'list'">
+        List View content
+    </div>
+</div>

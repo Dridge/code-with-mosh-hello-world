@@ -5,11 +5,19 @@ import { CoursesService } from './courses.service';
     selector: 'courses',
     template: `
         <h2>{{ title }}</h2>
-        <ul>
-            <li *ngFor="let course of courses">
-                {{ course }}
-            </li>
-        </ul>
+        <div *ngIf="courses.length > 0; then courseList else noCourses"></div>
+        <ng-template #courseList>
+            <ul>
+                <li *ngFor="let course of courses">
+                    {{ course }}
+                </li>
+            </ul>
+        </ng-template>
+        <ng-template #noCourses>
+            <ul>
+                No courses yet!
+            </ul>
+        </ng-template>
         <div (click)="onDivClicked()">
             <button (click)="onSave($event)" class="btn btn-primary" [class.active]="isActive" [style.backgroundColor]="isActive ? 'blue' : 'white'">Save</button>
         </div>
@@ -25,7 +33,7 @@ export class CoursesComponent implements OnInit {
     isActive = true;
     email = "me@example.com";
     text = `
-The error is possibly because with Ivy, the rendering engine needs to access the properties before hand which in this case would not be possible due to the event's nature. – Michael D Apr 16 at 10:51
+LONG TXT possibly because with Ivy, the rendering engine needs to access the properties before hand which in this case would not be possible due to the event's nature. – Michael D Apr 16 at 10:51
 
 Are you using Ivy? Most possibly it's due to AOT.
 
