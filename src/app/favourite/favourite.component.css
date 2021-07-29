@@ -1,5 +1,9 @@
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 
+    :hover {
+        cursor: pointer
+    }
+
     .bi {
         color: red;
     }

@@ -6,6 +6,9 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } fro
     styles: [
     `
     @import "~bootstrap-icons/font/bootstrap-icons.css";
+    :hover {
+      cursor: pointer
+    }
     .bi {
         color: green;
     }

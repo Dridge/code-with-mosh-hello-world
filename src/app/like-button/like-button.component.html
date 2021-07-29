@@ -1,9 +1,8 @@
 <p>like-button works!</p>
 <i
-    class="bi"
-    [class.bi-heart]="isSelected"
-    [class.bi-heart-fill]="!isSelected"
+    class="bi-heart-fill"
+    [class.bi-heart-fill-pink]="isSelected"
     (mouseenter)=onHover()
     (mouseleave)=onHoverOff()
     (click)=onClick()
-></i>
+></i><i>{{ count }}</i>
