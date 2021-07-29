@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import { Component, Input, Output, EventEmitter} from '@angular/core';
 import { LikeService } from '../like.service';
 
 @Component({
@@ -6,26 +6,27 @@ import { LikeService } from '../like.service';
   templateUrl: './like-button.component.html',
   styleUrls: ['./like-button.component.css']
 })
-export class LikeButtonComponent implements OnInit {
+export class LikeButtonComponent {
   @Input('isSelected') 
   isSelected: boolean = false;
 
   @Input('isHovered') 
   isHovered: boolean = false;
 
+  @Input('likesCount') likesCount: number;
+
   @Output()
   mouseOverEvent = new EventEmitter();
 
-  count = 0;
   constructor(likeService: LikeService) {
-    this.count = likeService.getLikes("dummyText");
+    this.likesCount = likeService.getLikes("dummyText");
   }
 
   onClick() {
     this.isSelected = !this.isSelected;
-    this.isSelected ? this.count++ : this.count--
+    this.likesCount += this.isSelected ? 1 : -1
     console.log("Favourite icon was clicked");
-    console.log("count is: " + this.count)
+    console.log("count is: " + this.likesCount)
   }
 
   onHover() {
@@ -38,9 +39,6 @@ export class LikeButtonComponent implements OnInit {
     console.log("Favourite icon hovered off");
     this.isHovered = !this.isHovered
     this.mouseOverEvent.emit({newValue: this.isHovered});
-  }
-
-  ngOnInit(): void {
   }
 
 }
