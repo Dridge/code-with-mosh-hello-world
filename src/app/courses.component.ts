@@ -58,6 +58,19 @@ Use a template-driven or reactive form to get the input value. IMO this would be
         console.log(this.email);
     }
 
+    onAdd(){
+        this.courses.push({name: 'courseExtra'});
+    }
+
+    onRemove(course: { name: string; }){
+        let index = this.courses.indexOf(course);
+        this.courses.splice(index, 1);
+    }
+
+    onChange(course: { name: string; }){
+        course.name = 'UPDATED';
+    }
+
     ngOnInit(): void {
     }
 }

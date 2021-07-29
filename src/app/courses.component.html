@@ -1,9 +1,14 @@
 <h2>{{ title }}</h2>
+<button class="btn btn-primary" (click)="onAdd()">Add</button>
 <div *ngIf="courses.length > 0; then courseList else noCourses"></div>
 <ng-template #courseList>
     <ul>
         <li *ngFor="let course of courses; even as isEven">
-            {{ course }} <span *ngIf="isEven">(EVEN)</span>
+            {{ course.name }} <span *ngIf="isEven">(EVEN)</span>
+            <div>
+                <button class="btn btn-primary" (click)="onRemove(course)">Remove</button>
+                <button class="btn btn-primary" (click)="onChange(course)">Change</button>
+            </div>
         </li>
     </ul>
 </ng-template>
