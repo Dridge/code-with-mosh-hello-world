@@ -3,29 +3,7 @@ import { CoursesService } from './courses.service';
 
 @Component({
     selector: 'courses',
-    template: `
-        <h2>{{ title }}</h2>
-        <div *ngIf="courses.length > 0; then courseList else noCourses"></div>
-        <ng-template #courseList>
-            <ul>
-                <li *ngFor="let course of courses">
-                    {{ course }}
-                </li>
-            </ul>
-        </ng-template>
-        <ng-template #noCourses>
-            <ul>
-                No courses yet!
-            </ul>
-        </ng-template>
-        <div (click)="onDivClicked()">
-            <button (click)="onSave($event)" class="btn btn-primary" [class.active]="isActive" [style.backgroundColor]="isActive ? 'blue' : 'white'">Save</button>
-        </div>
-        <input id="email" [(ngModel)]="email" (keyup.enter)="onKeyUp()"/>
-        <p>
-        {{ text | summary: 96}}
-        </p>
-    `
+    templateUrl: './courses.component.html',
 })
 export class CoursesComponent implements OnInit {
     title = "List of courses";
