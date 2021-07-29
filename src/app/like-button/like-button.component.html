@@ -1,9 +1,9 @@
 <p>like-button works!</p>
 <i
     class="bi"
-    [bi-heart]="isSelected"
-    [bi-heart-fill]="!isSelected"
+    [class.bi-heart]="isSelected"
+    [class.bi-heart-fill]="!isSelected"
     (mouseenter)=onHover()
-    (mouseleave)=onHoveroff()
+    (mouseleave)=onHoverOff()
     (click)=onClick()
 ></i>

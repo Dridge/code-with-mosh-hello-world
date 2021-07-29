@@ -4,6 +4,7 @@
 <ul>
     <li *ngFor="let book of books">
         {{ book }} <favourite [is-favourite]="post.isFavourite" (change)="onFavouriteChanged($event)"></favourite>
+        <like-button></like-button>
     </li>
 </ul>
 <table>
